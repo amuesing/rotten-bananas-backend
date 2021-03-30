@@ -10,6 +10,17 @@ class ReviewsController < ApplicationController
         render json: @review
     end
 
+    def show
+        @review = Review.find(params[:id])
+        render json: @review
+    end
+
+    def destroy
+        @review = Review.find(params[:id])
+        @review.destroy
+        render json: @review
+    end
+
         private
 
     def review_params
